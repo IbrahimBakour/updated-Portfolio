@@ -112,7 +112,7 @@ export function WorkSection() {
   return (
     <section id="work" className="py-20 bg-background relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -123,7 +123,7 @@ export function WorkSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A showcase of projects that demonstrate my expertise in modern web development
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mt-6 rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 rounded-full" />
         </div>
 
         {/* Featured Projects */}
@@ -156,7 +156,7 @@ export function WorkSection() {
                         <Button
                           size="sm"
                           variant="outline"
-                          className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent"
+                          className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
                         >
                           <Github className="h-4 w-4 mr-1" />
                           Code
@@ -167,7 +167,7 @@ export function WorkSection() {
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <Badge variant="outline" className="border-accent text-accent">
+                    <Badge variant="outline" className="border-secondary text-secondary">
                       {project.category}
                     </Badge>
                     <Eye className="h-4 w-4 text-muted-foreground" />
@@ -207,7 +207,7 @@ export function WorkSection() {
                 "transition-all duration-300",
                 activeCategory === category
                   ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                  : "border-border hover:border-primary hover:text-primary",
+                  : "border-border hover:border-primary hover:text-primary hover:bg-primary/10",
               )}
             >
               {category}
@@ -232,7 +232,7 @@ export function WorkSection() {
               </div>
               <CardContent className="p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <Badge variant="outline" className="border-accent text-accent text-xs">
+                  <Badge variant="outline" className="border-secondary text-secondary text-xs">
                     {project.category}
                   </Badge>
                   <div className="flex gap-1">
@@ -242,7 +242,7 @@ export function WorkSection() {
                       </Button>
                     )}
                     {project.githubUrl && (
-                      <Button size="sm" variant="ghost" className="h-6 w-6 p-0 hover:text-secondary">
+                      <Button size="sm" variant="ghost" className="h-6 w-6 p-0 hover:text-primary">
                         <Github className="h-3 w-3" />
                       </Button>
                     )}
@@ -274,7 +274,7 @@ export function WorkSection() {
           <p className="text-muted-foreground mb-6">Interested in working together? Let's create something amazing.</p>
           <Button
             size="lg"
-            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary/25"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             Start Your Project

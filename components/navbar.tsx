@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { useTheme } from "next-themes"
-import { Moon, Sun, Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -14,50 +14,53 @@ const navItems = [
   { name: "Work", href: "#work" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.href.substring(1))
-      const scrollPosition = window.scrollY + 100
+      const sections = navItems.map((item) => item.href.substring(1));
+      const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const offsetTop = element.offsetTop
-          const offsetHeight = element.offsetHeight
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section);
+            break;
           }
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.substring(1))
+    const element = document.getElementById(href.substring(1));
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -65,7 +68,9 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-primary neon-glow">Ibrahim</span>
+            <span className="text-2xl font-bold text-primary neon-glow">
+              Ibrahim
+            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -76,10 +81,10 @@ export function Navbar() {
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-primary",
+                    "px-3 py-2 text-sm font-medium transition-all duration-300",
                     activeSection === item.href.substring(1)
                       ? "text-primary border-b-2 border-primary"
-                      : "text-muted-foreground hover:text-foreground",
+                      : "text-muted-foreground hover:text-primary"
                   )}
                 >
                   {item.name}
@@ -94,15 +99,28 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="hover:bg-muted"
+              className="group hover:bg-primary hover:text-primary-foreground"
             >
-              {theme === "dark" ? <Sun className="h-5 w-5 text-accent" /> : <Moon className="h-5 w-5 text-primary" />}
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5 text-primary group-hover:text-primary-foreground hover:bg-primary/80" />
+              ) : (
+                <Moon className="h-5 w-5 text-primary group-hover:text-primary-foreground " />
+              )}
             </Button>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="hover:bg-muted">
-                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(!isOpen)}
+                className="hover:bg-primary hover:text-primary-foreground"
+              >
+                {isOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </Button>
             </div>
           </div>
@@ -120,7 +138,7 @@ export function Navbar() {
                     "block px-3 py-2 text-base font-medium w-full text-left transition-all duration-300",
                     activeSection === item.href.substring(1)
                       ? "text-primary bg-muted"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted",
+                      : "text-muted-foreground hover:text-primary hover:bg-muted"
                   )}
                 >
                   {item.name}
@@ -131,5 +149,5 @@ export function Navbar() {
         )}
       </div>
     </nav>
-  )
+  );
 }

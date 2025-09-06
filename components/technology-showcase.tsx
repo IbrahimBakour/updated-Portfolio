@@ -137,7 +137,7 @@ export function TechnologyShowcase() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Cutting-edge technologies I use to build exceptional digital experiences
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mt-6 rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 rounded-full" />
         </div>
 
         {/* Technology Swipers Stack */}
@@ -165,8 +165,8 @@ export function TechnologyShowcase() {
           {/* Tools & DevOps - Moving Left */}
           <div className="relative">
             <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 z-20">
-              <div className="bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-lg px-3 py-1">
-                <span className="text-accent font-semibold text-sm">Tools</span>
+              <div className="bg-secondary/20 backdrop-blur-sm border border-secondary/30 rounded-lg px-3 py-1">
+                <span className="text-secondary font-semibold text-sm">Tools</span>
               </div>
             </div>
             <TechSwiper technologies={toolsTechnologies} direction="left" speed={45} />
@@ -180,15 +180,15 @@ export function TechnologyShowcase() {
             <div className="text-sm text-muted-foreground">Years Experience</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-secondary mb-2">50+</div>
+            <div className="text-3xl font-bold text-primary mb-2">50+</div>
             <div className="text-sm text-muted-foreground">Projects Completed</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-accent mb-2">20+</div>
+            <div className="text-3xl font-bold text-secondary mb-2">20+</div>
             <div className="text-sm text-muted-foreground">Technologies</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">100%</div>
+            <div className="text-3xl font-bold text-secondary mb-2">100%</div>
             <div className="text-sm text-muted-foreground">Client Satisfaction</div>
           </div>
         </div>

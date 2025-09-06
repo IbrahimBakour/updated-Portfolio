@@ -1,57 +1,66 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const roles = ["Full-Stack Developer", "React Specialist", "Node.js Expert", "UI/UX Enthusiast", "Problem Solver"]
+const roles = [
+  "Full-Stack Developer",
+  "React Specialist",
+  "Node.js Expert",
+  "UI/UX Enthusiast",
+  "Problem Solver",
+];
 
 export function HeroSection() {
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
-  const [displayedText, setDisplayedText] = useState("")
-  const [isTyping, setIsTyping] = useState(true)
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
-    const currentRole = roles[currentRoleIndex]
-    let timeoutId: NodeJS.Timeout
+    const currentRole = roles[currentRoleIndex];
+    let timeoutId: NodeJS.Timeout;
 
     if (isTyping) {
       if (displayedText.length < currentRole.length) {
         timeoutId = setTimeout(() => {
-          setDisplayedText(currentRole.slice(0, displayedText.length + 1))
-        }, 100)
+          setDisplayedText(currentRole.slice(0, displayedText.length + 1));
+        }, 100);
       } else {
         timeoutId = setTimeout(() => {
-          setIsTyping(false)
-        }, 2000)
+          setIsTyping(false);
+        }, 2000);
       }
     } else {
       if (displayedText.length > 0) {
         timeoutId = setTimeout(() => {
-          setDisplayedText(displayedText.slice(0, -1))
-        }, 50)
+          setDisplayedText(displayedText.slice(0, -1));
+        }, 50);
       } else {
-        setCurrentRoleIndex((prev) => (prev + 1) % roles.length)
-        setIsTyping(true)
+        setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        setIsTyping(true);
       }
     }
 
-    return () => clearTimeout(timeoutId)
-  }, [displayedText, isTyping, currentRoleIndex])
+    return () => clearTimeout(timeoutId);
+  }, [displayedText, isTyping, currentRoleIndex]);
 
   const scrollToAbout = () => {
-    const element = document.getElementById("about")
+    const element = document.getElementById("about");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,0,60,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(255,0,60,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_50%)]" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -59,7 +68,9 @@ export function HeroSection() {
           <div className="space-y-8 text-center lg:text-left">
             {/* Greeting */}
             <div className="space-y-2">
-              <p className="text-lg text-muted-foreground font-mono">Hello, I'm</p>
+              <p className="text-lg text-muted-foreground font-mono">
+                Hello, I'm
+              </p>
               <h1 className="text-5xl md:text-7xl font-bold text-foreground">
                 <span className="text-primary neon-glow">Ibrahim</span>
               </h1>
@@ -69,15 +80,23 @@ export function HeroSection() {
             <div className="h-16 flex items-center justify-center lg:justify-start">
               <div className="text-2xl md:text-3xl font-semibold text-secondary">
                 <span className="font-mono">&gt; </span>
-                <span className={cn("border-r-2 border-accent", isTyping ? "animate-pulse" : "")}>{displayedText}</span>
+                <span
+                  className={cn(
+                    "border-r-2 border-accent",
+                    isTyping ? "animate-pulse" : ""
+                  )}
+                >
+                  {displayedText}
+                </span>
               </div>
             </div>
 
             {/* Description */}
             <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              Passionate about creating innovative digital solutions that bridge the gap between cutting-edge technology
-              and exceptional user experiences. I specialize in building scalable web applications with modern
-              frameworks and clean, efficient code.
+              Passionate about creating innovative digital solutions that bridge
+              the gap between cutting-edge technology and exceptional user
+              experiences. I specialize in building scalable web applications
+              with modern frameworks and clean, efficient code.
             </p>
 
             {/* CTA Buttons */}
@@ -85,7 +104,11 @@ export function HeroSection() {
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
-                onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document
+                    .getElementById("work")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 View My Work
               </Button>
@@ -93,7 +116,11 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground font-semibold px-8 py-3 transition-all duration-300 hover:scale-105 bg-transparent"
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Get In Touch
@@ -105,21 +132,21 @@ export function HeroSection() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:text-primary hover:scale-110 transition-all duration-300"
+                className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
               >
                 <Github className="h-5 w-5" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:text-secondary hover:scale-110 transition-all duration-300"
+                className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
               >
                 <Linkedin className="h-5 w-5" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:text-accent hover:scale-110 transition-all duration-300"
+                className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
               >
                 <Download className="h-5 w-5" />
               </Button>
@@ -149,7 +176,9 @@ export function HeroSection() {
                 <span className="text-primary font-mono text-sm">{`{}`}</span>
               </div>
               <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-secondary/30">
-                <span className="text-secondary font-mono text-sm">&lt;/&gt;</span>
+                <span className="text-secondary font-mono text-sm">
+                  &lt;/&gt;
+                </span>
               </div>
               <div className="absolute top-1/2 -left-8 w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30">
                 <span className="text-accent font-mono text-xs">fn</span>
@@ -164,12 +193,12 @@ export function HeroSection() {
             variant="ghost"
             size="icon"
             onClick={scrollToAbout}
-            className="animate-bounce hover:text-primary transition-colors duration-300"
+            className="animate-bounce hover:text-primary-foreground hover:bg-primary dark:hover:bg-primary/80 transition-colors duration-300"
           >
             <ArrowDown className="h-6 w-6" />
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }

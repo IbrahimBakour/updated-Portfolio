@@ -81,7 +81,7 @@ export function ServicesSection() {
   return (
     <section id="services" className="py-20 bg-muted/5 relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -92,7 +92,7 @@ export function ServicesSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Comprehensive development solutions tailored to bring your digital vision to life
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mt-6 rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 rounded-full" />
         </div>
 
         {/* Services Grid */}
@@ -141,7 +141,7 @@ export function ServicesSection() {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-transparent"
+                      className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                     >
                       Learn More
                     </Button>

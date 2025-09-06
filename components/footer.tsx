@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
 
 const quickLinks = [
   { name: "Home", href: "#home" },
@@ -11,7 +11,7 @@ const quickLinks = [
   { name: "Work", href: "#work" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 const services = [
   "Frontend Development",
@@ -20,29 +20,29 @@ const services = [
   "Mobile Development",
   "Performance Optimization",
   "Security Auditing",
-]
+];
 
 export function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.substring(1))
+    const element = document.getElementById(href.substring(1));
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <footer className="bg-muted/10 border-t border-border relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-accent/5 via-transparent to-transparent" />
 
-      {/* Circuit Pattern */}
+      {/* Circuit Pattern
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_24px,rgba(255,0,60,0.5)_25px,rgba(255,0,60,0.5)_26px,transparent_27px,transparent_49px,rgba(8,253,216,0.5)_50px,rgba(8,253,216,0.5)_51px,transparent_52px),linear-gradient(rgba(255,0,60,0.5)_24px,transparent_25px,transparent_26px,rgba(255,0,60,0.5)_27px,rgba(255,0,60,0.5)_49px,transparent_50px,transparent_51px,rgba(8,253,216,0.5)_52px)] bg-[length:75px_75px]" />
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
@@ -50,10 +50,12 @@ export function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-primary neon-glow mb-2">Ibrahim</h3>
+              <h3 className="text-2xl font-bold text-primary neon-glow mb-2">
+                Ibrahim
+              </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Full-Stack Developer crafting exceptional digital experiences with cutting-edge technologies and
-                innovative solutions.
+                Full-Stack Developer crafting exceptional digital experiences
+                with cutting-edge technologies and innovative solutions.
               </p>
             </div>
             <div className="flex gap-3">
@@ -74,7 +76,7 @@ export function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                className="border-accent/50 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110 bg-transparent"
+                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
               >
                 <Twitter className="h-4 w-4" />
               </Button>
@@ -90,7 +92,9 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-4">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -107,11 +111,15 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">Services</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-4">
+              Services
+            </h4>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-muted-foreground text-sm">{service}</span>
+                  <span className="text-muted-foreground text-sm">
+                    {service}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -119,7 +127,9 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">Get In Touch</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-4">
+              Get In Touch
+            </h4>
             <div className="space-y-3 text-sm">
               <div>
                 <p className="text-muted-foreground">Email</p>
@@ -136,7 +146,9 @@ export function Footer() {
               <div className="pt-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-green-500 text-xs font-medium">Available for projects</span>
+                  <span className="text-green-500 text-xs font-medium">
+                    Available for projects
+                  </span>
                 </div>
               </div>
             </div>
@@ -146,8 +158,12 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
-            <p className="text-muted-foreground text-sm">© {new Date().getFullYear()} Ibrahim. All rights reserved.</p>
-            <p className="text-muted-foreground text-xs mt-1">Built with Next.js, TypeScript, and Tailwind CSS</p>
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} Ibrahim. All rights reserved.
+            </p>
+            <p className="text-muted-foreground text-xs mt-1">
+              Built with Next.js, TypeScript, and Tailwind CSS
+            </p>
           </div>
 
           <div className="flex items-center gap-4">
@@ -169,7 +185,7 @@ export function Footer() {
               variant="outline"
               size="icon"
               onClick={scrollToTop}
-              className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
+              className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               <ArrowUp className="h-4 w-4" />
             </Button>
@@ -177,5 +193,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
