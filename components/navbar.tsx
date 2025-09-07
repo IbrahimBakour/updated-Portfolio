@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Technologies", href: "#technologies" },
+  // { name: "Technologies", href: "#technologies" },
   { name: "Services", href: "#services" },
   { name: "Work", href: "#work" },
-  { name: "Testimonials", href: "#testimonials" },
+  // { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -63,15 +63,11 @@ export function Navbar() {
   if (!mounted) return null;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-primary neon-glow">
-              Ibrahim
-            </span>
-          </div>
+          <div className="flex-shrink-0"></div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">

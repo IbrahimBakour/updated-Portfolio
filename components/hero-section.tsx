@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 
 const roles = [
@@ -17,6 +18,7 @@ export function HeroSection() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
+  const [showScrollLabel, setShowScrollLabel] = useState(false);
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
@@ -134,14 +136,14 @@ export function HeroSection() {
                 size="icon"
                 className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
               >
-                <Github className="h-5 w-5" />
+                <FaGithub className="h-5 w-5" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
                 className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
               >
-                <Linkedin className="h-5 w-5" />
+                <FaLinkedin className="h-5 w-5" />
               </Button>
               <Button
                 variant="ghost"
@@ -188,7 +190,11 @@ export function HeroSection() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          onMouseEnter={() => setShowScrollLabel(true)}
+          onMouseLeave={() => setShowScrollLabel(false)}
+        >
           <Button
             variant="ghost"
             size="icon"
@@ -197,6 +203,11 @@ export function HeroSection() {
           >
             <ArrowDown className="h-6 w-6" />
           </Button>
+          {showScrollLabel && (
+            <div className="absolute -top-8 bg-primary/80 text-primary-foreground text-xs px-2 py-1 rounded-md transition-all duration-300 whitespace-nowrap">
+              About Me
+            </div>
+          )}
         </div>
       </div>
     </section>

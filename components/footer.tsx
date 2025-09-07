@@ -1,7 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
+import { Mail, ArrowUp } from "lucide-react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const quickLinks = [
   { name: "Home", href: "#home" },
@@ -64,22 +65,23 @@ export function Footer() {
                 size="icon"
                 className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
               >
-                <Github className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="border-secondary/50 text-secondary hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
-              >
-                <Linkedin className="h-4 w-4" />
+                <FaGithub className="h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
                 size="icon"
                 className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
               >
-                <Twitter className="h-4 w-4" />
+                <FaLinkedin className="h-4 w-4" />
               </Button>
+              {/* <Button
+                variant="outline"
+                size="icon"
+                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
+              >
+              </Button>
+              */}
+
               <Button
                 variant="outline"
                 size="icon"
@@ -133,15 +135,15 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div>
                 <p className="text-muted-foreground">Email</p>
-                <p className="text-foreground">ibrahim@example.com</p>
+                <p className="text-foreground">ibakour37@gmail.com</p>
               </div>
               <div>
                 <p className="text-muted-foreground">Phone</p>
-                <p className="text-foreground">+1 (555) 123-4567</p>
+                <p className="text-foreground">+966 50 532 4115</p>
               </div>
               <div>
                 <p className="text-muted-foreground">Location</p>
-                <p className="text-foreground">San Francisco, CA</p>
+                <p className="text-foreground">Saudi Arabia, Riyadh</p>
               </div>
               <div className="pt-2">
                 <div className="flex items-center gap-2">
@@ -161,26 +163,9 @@ export function Footer() {
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} Ibrahim. All rights reserved.
             </p>
-            <p className="text-muted-foreground text-xs mt-1">
-              Built with Next.js, TypeScript, and Tailwind CSS
-            </p>
           </div>
 
           <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-            >
-              Privacy Policy
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-            >
-              Terms of Service
-            </Button>
             <Button
               variant="outline"
               size="icon"

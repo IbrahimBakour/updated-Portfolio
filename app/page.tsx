@@ -1,11 +1,12 @@
-import { Navbar } from "@/components/navbar"
-import { HeroSection } from "@/components/hero-section"
-import { TechnologyShowcase } from "@/components/technology-showcase"
-import { ServicesSection } from "@/components/services-section"
-import { WorkSection } from "@/components/work-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
+import { Navbar } from "@/components/navbar";
+import { HeroSection } from "@/components/hero-section";
+import { AboutSection } from "@/components/about-section";
+import { TechnologyShowcase } from "@/components/technology-showcase";
+import { ServicesSection } from "@/components/services-section";
+import { WorkSection } from "@/components/work-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { ContactSection } from "@/components/contact-section";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -14,10 +15,7 @@ export default function Home() {
 
       <HeroSection />
 
-      {/* Section Placeholders */}
-      <section id="about" className="min-h-screen flex items-center justify-center bg-muted/10">
-        <h2 className="text-3xl font-bold text-foreground">About Section</h2>
-      </section>
+      <AboutSection />
 
       <TechnologyShowcase />
 
@@ -31,5 +29,5 @@ export default function Home() {
 
       <Footer />
     </main>
-  )
+  );
 }
