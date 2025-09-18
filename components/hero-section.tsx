@@ -164,7 +164,7 @@ export function HeroSection() {
               {/* Profile Image Container */}
               <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl">
                 <img
-                  src="/professional-headshot-of-ibrahim--full-stack-devel.jpg"
+                  src="/SelfImage.png"
                   alt="Ibrahim - Full-Stack Developer"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
