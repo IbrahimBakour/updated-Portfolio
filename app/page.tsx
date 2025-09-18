@@ -7,10 +7,12 @@ import { WorkSection } from "@/components/work-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { DevelopmentAlert } from "@/components/development-alert";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <DevelopmentAlert />
       <Navbar />
 
       <HeroSection />
