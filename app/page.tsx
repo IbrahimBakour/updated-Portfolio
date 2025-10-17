@@ -13,7 +13,7 @@ import { SectionSeparator } from "@/components/ui/section-separator";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <DevelopmentAlert />
+      {/* <DevelopmentAlert /> */}
       <Navbar />
 
       <HeroSection />
