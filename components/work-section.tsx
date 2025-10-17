@@ -169,11 +169,14 @@ const categories = ["All", "Full-Stack", "Frontend", "Backend", "Mobile"];
 export function WorkSection() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const filteredProjects =
     activeCategory === "All"
       ? projects
       : projects.filter((project) => project.category === activeCategory);
+
+  const projectsToShow = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
   const featuredProjects = projects.filter((project) => project.featured);
 
@@ -190,86 +193,6 @@ export function WorkSection() {
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 rounded-full" />
         </div>
-
-        {/* Featured Projects
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
-            Featured Projects
-          </h3>
-          <div className="grid lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project) => (
-              <Card
-                key={project.id}
-                className="group cursor-pointer transition-all duration-500 hover:scale-105 border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden"
-                onMouseEnter={() => setHoveredProject(project.id)}
-                onMouseLeave={() => setHoveredProject(null)}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                    <div className="flex gap-2">
-                      {project.liveUrl && (
-                        <Button
-                          size="sm"
-                          className="bg-primary hover:bg-primary/90"
-                        >
-                          <ExternalLink className="h-4 w-4 mr-1" />
-                          Live
-                        </Button>
-                      )}
-                      {project.githubUrl && (
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                        >
-                          <Github className="h-4 w-4 mr-1" />
-                          Code
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge
-                      variant="outline"
-                      className="border-secondary text-secondary"
-                    >
-                      {project.category}
-                    </Badge>
-                    <Eye className="h-4 w-4 text-muted-foreground" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    {hoveredProject === project.id
-                      ? project.longDescription
-                      : project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <Badge variant="secondary" className="text-xs">
-                        +{project.technologies.length - 3}
-                      </Badge>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div> */}
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -292,7 +215,7 @@ export function WorkSection() {
 
         {/* All Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {projectsToShow.map((project) => (
             <Card
               key={project.id}
               className="group cursor-pointer transition-all duration-300 hover:scale-105 border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden"
@@ -369,17 +292,11 @@ export function WorkSection() {
           ))}
         </div>
 
-        {/* CTA Section
-        <div className="text-center mt-16">
-          <p className="text-muted-foreground mb-6">Interested in working together? Let's create something amazing.</p>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Start Your Project
-          </Button>
-        </div> */}
+        {!showAll && filteredProjects.length > 6 && (
+          <div className="text-center mt-8">
+            <Button onClick={() => setShowAll(true)}>Show More</Button>
+          </div>
+        )}
       </div>
     </section>
   );
