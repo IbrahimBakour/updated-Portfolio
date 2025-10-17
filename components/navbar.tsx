@@ -91,7 +91,7 @@ export function Navbar() {
 
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
-            <Button
+            {/* <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -102,7 +102,7 @@ export function Navbar() {
               ) : (
                 <Moon className="h-5 w-5 text-primary group-hover:text-primary-foreground " />
               )}
-            </Button>
+            </Button> */}
 
             {/* Mobile menu button */}
             <div className="md:hidden">

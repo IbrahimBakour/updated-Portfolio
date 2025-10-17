@@ -13,7 +13,6 @@ const frontendTechnologies: Technology[] = [
   { name: "React", icon: "⚛️", color: "#61DAFB", category: "Frontend" },
   { name: "Next.js", icon: "▲", color: "#000000", category: "Frontend" },
   { name: "Vue.js", icon: "🟢", color: "#4FC08D", category: "Frontend" },
-  { name: "Angular", icon: "🅰️", color: "#DD0031", category: "Frontend" },
   { name: "TypeScript", icon: "📘", color: "#3178C6", category: "Frontend" },
   { name: "JavaScript", icon: "🟨", color: "#F7DF1E", category: "Frontend" },
   { name: "HTML5", icon: "🌐", color: "#E34F26", category: "Frontend" },
@@ -30,21 +29,22 @@ const backendTechnologies: Technology[] = [
   { name: "FastAPI", icon: "⚡", color: "#009688", category: "Backend" },
   { name: "PostgreSQL", icon: "🐘", color: "#336791", category: "Backend" },
   { name: "MongoDB", icon: "🍃", color: "#47A248", category: "Backend" },
-  { name: "Redis", icon: "🔴", color: "#DC382D", category: "Backend" },
-  { name: "GraphQL", icon: "🔗", color: "#E10098", category: "Backend" },
+  { name: "MySQL", icon: "🐬", color: "#00758F", category: "Backend" },
+  { name: "php", icon: "🐘", color: "#777BB4", category: "Backend" },
+  { name: "laravel", icon: "🌹", color: "#FF2D20", category: "Backend" },
   { name: "REST API", icon: "🌐", color: "#FF6B35", category: "Backend" },
 ];
 
 const toolsTechnologies: Technology[] = [
   { name: "Git", icon: "📝", color: "#F05032", category: "Tools" },
-  { name: "Docker", icon: "🐳", color: "#2496ED", category: "Tools" },
-  { name: "AWS", icon: "☁️", color: "#FF9900", category: "Tools" },
+  { name: "GitHub", icon: "🐙", color: "#181717", category: "Tools" },
   { name: "Vercel", icon: "▲", color: "#000000", category: "Tools" },
   { name: "Firebase", icon: "🔥", color: "#FFCA28", category: "Tools" },
   { name: "Figma", icon: "🎨", color: "#F24E1E", category: "Tools" },
   { name: "VS Code", icon: "💻", color: "#007ACC", category: "Tools" },
   { name: "Postman", icon: "📮", color: "#FF6C37", category: "Tools" },
   { name: "Webpack", icon: "📦", color: "#8DD6F9", category: "Tools" },
+  { name: "Cursor", icon: "🖱️", color: "#000000", category: "Tools" },
   { name: "Vite", icon: "⚡", color: "#646CFF", category: "Tools" },
 ];
 
@@ -129,11 +129,7 @@ function TechSwiper({ technologies, direction, speed = 30 }: TechSwiperProps) {
 
 export function TechnologyShowcase() {
   return (
-    <section
-      id="technologies"
-      className="py-20 relative overflow-hidden"
-    >
-
+    <section id="technologies" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -198,7 +194,7 @@ export function TechnologyShowcase() {
           </div>
         </div>
 
-        {/* Stats Section */}
+        {/* Stats Section
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center">
             <div className="text-3xl font-bold text-primary mb-2">5+</div>
@@ -222,7 +218,7 @@ export function TechnologyShowcase() {
               Client Satisfaction
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

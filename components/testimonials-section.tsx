@@ -211,7 +211,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Navigation Controls */}
-        <div className="flex items-center justify-center gap-4 mb-8">
+        <div className="flex items-center justify-center gap-4">
           <Button
             variant="outline"
             size="icon"
@@ -247,7 +247,7 @@ export function TestimonialsSection() {
           </Button>
         </div>
 
-        {/* Stats Grid */}
+        {/* Stats Grid
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
           <div className="text-center">
             <div className="text-3xl font-bold text-primary mb-2 neon-glow">
@@ -267,7 +267,7 @@ export function TestimonialsSection() {
             <div className="text-3xl font-bold text-secondary mb-2">5.0</div>
             <div className="text-sm text-muted-foreground">Average Rating</div>
           </div>
-        </div>
+        </div> */}
 
         {/* CTA Section
         <div className="text-center mt-16">

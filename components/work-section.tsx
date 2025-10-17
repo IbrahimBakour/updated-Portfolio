@@ -22,84 +22,144 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "ecommerce-platform",
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with payment integration",
+    id: "umpsa-community-platform",
+    title: "UMPSA Community Platform",
+    description: "Full-stack community platform with user engagement features",
     longDescription:
-      "A comprehensive e-commerce platform built with Next.js and Node.js, featuring user authentication, product management, shopping cart, payment processing with Stripe, and admin dashboard.",
-    image: "/modern-ecommerce-dashboard.png",
+      "UMPSA Community Platform is my Final Year Project, a MERN-based web app that connects students, clubs, and admins in one hub. Enabling posts, interactions, and reporting, all in a responsive and engaging community space.",
+    image: "/UMPSALogo.png",
     technologies: [
-      "Next.js",
+      "React.js",
       "Node.js",
-      "PostgreSQL",
-      "Stripe",
+      "MongoDB",
+      "Motion UI",
       "Tailwind CSS",
     ],
     category: "Full-Stack",
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    // liveUrl: "https://example.com",
+    githubUrl: "https://github.com/IbrahimBakour/UMPSA-Community-Platform",
     featured: true,
   },
   {
-    id: "task-management",
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates",
+    id: "onsoftware-website",
+    title: "onSoftware Website",
+    description: "Modern landing page for a software development company",
     longDescription:
-      "A modern task management application with real-time collaboration features, drag-and-drop functionality, team management, and progress tracking.",
-    image: "/task-management-dashboard-dark-theme.jpg",
-    technologies: ["React", "Socket.io", "MongoDB", "Express", "Material-UI"],
+      "A modern landing page for a software development company, showcasing services, projects, and client testimonials.",
+    image: "/OnSoftware.jpeg",
+    technologies: ["Next.js", "Tailwind CSS", "Shadcn UI", "Material-UI"],
     category: "Frontend",
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    liveUrl: "https://on-software-delta.vercel.app/",
     featured: true,
   },
   {
-    id: "crypto-tracker",
-    title: "Cryptocurrency Tracker",
-    description: "Real-time crypto price tracking with portfolio management",
+    id: "easy-order-website",
+    title: "EasyOrder Website",
+    description: "Responsive website for a food ordering service",
     longDescription:
-      "A cryptocurrency tracking application with real-time price updates, portfolio management, price alerts, and detailed analytics charts.",
-    image: "/cryptocurrency-trading-dashboard.png",
-    technologies: ["Vue.js", "Python", "FastAPI", "Redis", "Chart.js"],
+      "A responsive website for a food ordering service, featuring a user-friendly interface, real-time order tracking, and seamless payment integration.",
+    image: "/EasyOrder.jpeg",
+    technologies: ["Laravel", "PHP", "MySQL", "Bootstrap", "Vue.js"],
     category: "Full-Stack",
-    liveUrl: "https://example.com",
+    // githubUrl: "https://example.com",
     featured: true,
   },
   {
-    id: "social-media-app",
-    title: "Social Media Platform",
-    description: "Modern social networking app with real-time messaging",
+    id: "care-pulse-website",
+    title: "Carepulse Website",
+    description: "Healthcare platform for patient management",
     longDescription:
-      "A social media platform featuring user profiles, post sharing, real-time messaging, notifications, and content moderation.",
-    image: "/social-media-app-interface.png",
-    technologies: ["React Native", "Firebase", "Node.js", "GraphQL"],
-    category: "Mobile",
-    githubUrl: "https://github.com",
+      "A healthcare platform that streamlines patient registration, appointment scheduling, medical records, and the admin dashboard.",
+    image: "/CarePulse.jpeg",
+    technologies: ["Next.js", "REST APIs", "Appwrite", "SMS"],
+    category: "Full-Stack",
+    githubUrl: "https://github.com/IbrahimBakour/carepulse",
     featured: false,
   },
   {
-    id: "ai-chatbot",
-    title: "AI Customer Support Bot",
-    description: "Intelligent chatbot for automated customer service",
+    id: "fyp-gate",
+    title: "Fyp Gate Website",
+    description: "Final year project gate website",
     longDescription:
-      "An AI-powered chatbot system with natural language processing, automated responses, and seamless handoff to human agents.",
-    image: "/ai-chatbot-interface.png",
-    technologies: ["Python", "TensorFlow", "Flask", "OpenAI API"],
+      "A Laravel-based platform using Bootstrap and XAMPP, streamlining final year project proposals, student-supervisor selection, quota management, and appointments.",
+    image: "/FypGate.jpeg",
+    technologies: ["Laravel", "Bootstrap", "XAMPP", "MySQL"],
+    category: "Full-Stack",
+    githubUrl: "https://github.com/IbrahimBakour/Fyp-Gate",
+    featured: false,
+  },
+  {
+    id: "company-profile",
+    title: "Printing press company profile",
+    description: "Printing press company Profile",
+    longDescription:
+      "A simple company profile website built using HTML, CSS, and JavaScript, with a touch of Bootstrap for responsiveness.",
+    image: "/Press.jpeg",
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    category: "Frontend",
+    liveUrl: "https://ibrahimbakour.github.io/Press/",
+    githubUrl: "https://github.com/IbrahimBakour/Press",
+    featured: false,
+  },
+
+  {
+    id: "old-porfolio",
+    title: "My Previous Portfolio",
+    description: "My old portfolio",
+    longDescription:
+      "A sleek and responsive portfolio website built with Next.js, Tailwind CSS, and Node.js.",
+    image: "/PortfolioV1.jpeg",
+    technologies: ["Next.js", "Tailwind CSS", "Node.js"],
+    category: "Frontend",
+    liveUrl: "https://portfolio-kappa-six-47.vercel.app/",
+    githubUrl: "https://github.com/IbrahimBakour/portfolio",
+    featured: false,
+  },
+  {
+    id: "shipping-and-delivery-system",
+    title: "Shpping and Delivery System",
+    description: "A comprehensive shipping and delivery system",
+    longDescription:
+      "Developed a comprehensive Shipping and Delivery System using Java and an Object-Oriented Programming (OOP) approach to streamline logistics and delivery operations",
+    image: "/ShippingAndDeliverySystem.jpeg",
+    technologies: ["Java", "NetBeans", "OOP"],
+    category: "Full-Stack",
+    githubUrl: "https://github.com/IbrahimBakour/Shipping-and-Delivery-System",
+    featured: false,
+  },
+  {
+    id: "authentication-page",
+    title: "Authentication Page",
+    description: "A comprehensive authentication page",
+    longDescription:
+      "Advanced MERN Authentication page with Login, Sign up, Email Verification, Password Recovery, and Welcome Emails ",
+    image: "/LoginPage.jpeg",
+    technologies: ["React.js", "Express", "MongoDB", "Mailtrap"],
     category: "Backend",
-    liveUrl: "https://example.com",
+    liveUrl: "https://mern-auth-yemw.onrender.com/",
+    githubUrl: "https://github.com/IbrahimBakour/MERN-Auth",
     featured: false,
   },
   {
-    id: "fitness-tracker",
-    title: "Fitness Tracking App",
-    description: "Mobile app for workout tracking and health monitoring",
-    longDescription:
-      "A comprehensive fitness tracking application with workout logging, progress tracking, nutrition monitoring, and social features.",
-    image: "/fitness-app-dashboard.png",
-    technologies: ["Flutter", "Dart", "Firebase", "HealthKit"],
+    id: "dietary-planning-screen",
+    title: "Dietary Planning Screen",
+    description: "A flutter food planning screen",
+    longDescription: "",
+    image: "/FlutterScreen.jpeg",
+    technologies: ["Flutter", "Dart"],
     category: "Mobile",
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    featured: false,
+  },
+  {
+    id: "telegram-bot",
+    title: "Telegram Bot",
+    description: "A bot for telegram educational group",
+    longDescription:
+      "A Telegram bot designed to reward members with stars within educational groups.",
+    image: "/TelegramBot.png",
+    technologies: ["Python", "Node.js"],
+    category: "Backend",
+    liveUrl: "https://telegramlingostarsbot.onrender.com/",
     featured: false,
   },
 ];
@@ -126,13 +186,12 @@ export function WorkSection() {
             Featured <span className="text-primary neon-glow">Work</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of projects that demonstrate my expertise in modern web
-            development
+            A showcase of projects that demonstrate my expertise
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 rounded-full" />
         </div>
 
-        {/* Featured Projects */}
+        {/* Featured Projects
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
             Featured Projects
@@ -210,7 +269,7 @@ export function WorkSection() {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -256,22 +315,34 @@ export function WorkSection() {
                   </Badge>
                   <div className="flex gap-1">
                     {project.liveUrl && (
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        className="h-6 w-6 p-0 hover:text-primary"
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <ExternalLink className="h-3 w-3" />
-                      </Button>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          className="h-6 w-6 p-0 hover:text-primary"
+                        >
+                          <ExternalLink className="h-3 w-3" />
+                        </Button>
+                      </a>
                     )}
                     {project.githubUrl && (
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        className="h-6 w-6 p-0 hover:text-primary"
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <Github className="h-3 w-3" />
-                      </Button>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          className="h-6 w-6 p-0 hover:text-primary"
+                        >
+                          <Github className="h-3 w-3" />
+                        </Button>
+                      </a>
                     )}
                   </div>
                 </div>
