@@ -9,70 +9,53 @@ import { cn } from "@/lib/utils";
 interface Testimonial {
   id: string;
   name: string;
-  role: string;
-  company: string;
   content: string;
   rating: number;
   avatar: string;
-  projectType: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: "1",
-    name: "Sarah Chen",
-    role: "CTO",
-    company: "TechFlow Solutions",
+    name: "Arifuzzaman Moin",
     content:
-      "Ibrahim delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and technical expertise transformed our business operations completely.",
+      "I had the pleasure of studying with Ibrahim at university, where I was his senior. He is adaptable, collaborative, and always brings a calm, solutions-focused mindset—any team would be lucky to have him.",
     rating: 5,
-    avatar: "/professional-woman-tech-executive.png",
-    projectType: "E-Commerce Platform",
+    avatar: "/Moin.jpeg",
   },
   {
     id: "2",
-    name: "Marcus Rodriguez",
-    role: "Founder",
-    company: "StartupLab",
+    name: "Amr Alsabaeei",
     content:
-      "Working with Ibrahim was a game-changer. He built our MVP from scratch and helped us secure our first round of funding. His full-stack skills are unmatched.",
+      "I had the pleasure of studying with Ibrahim during our software engineering program, and he consistently impressed me with his skills as a full stack developer.",
     rating: 5,
-    avatar: "/hispanic-male-startup-founder.jpg",
-    projectType: "MVP Development",
+    avatar: "/Amr.jpeg",
   },
   {
     id: "3",
-    name: "Emily Watson",
-    role: "Product Manager",
-    company: "DigitalCorp",
+    name: "Manea Abdullah",
     content:
-      "Ibrahim's mobile app development skills are outstanding. He created a seamless cross-platform experience that our users absolutely love. Highly recommended!",
+      "Ibrahim has always impressed me with his sharp technical skills and thoughtful approach to development. As a full stack developer, he's comfortable working across the entire tech stack and consistently delivers clean, efficient code.",
     rating: 5,
-    avatar: "/blonde-woman-product-manager.jpg",
-    projectType: "Mobile App",
+    avatar: "/Manea.png",
   },
-  {
-    id: "4",
-    name: "David Kim",
-    role: "CEO",
-    company: "InnovateTech",
-    content:
-      "The AI chatbot Ibrahim developed revolutionized our customer service. Response times improved by 80% and customer satisfaction reached an all-time high.",
-    rating: 5,
-    avatar: "/asian-male-ceo-tech-company.jpg",
-    projectType: "AI Integration",
-  },
-  {
-    id: "5",
-    name: "Lisa Thompson",
-    role: "Marketing Director",
-    company: "GrowthAgency",
-    content:
-      "Ibrahim optimized our website performance and the results were incredible. Page load times decreased by 60% and our conversion rates doubled.",
-    rating: 5,
-    avatar: "/professional-woman-marketing-director.jpg",
-    projectType: "Performance Optimization",
-  },
+
+  // {
+  //   id: "4",
+  //   name: "David Kim",
+  //   content:
+  //     "The AI chatbot Ibrahim developed revolutionized our customer service. Response times improved by 80% and customer satisfaction reached an all-time high.",
+  //   rating: 5,
+  //   avatar: "/asian-male-ceo-tech-company.jpg",
+  // },
+  // {
+  //   id: "5",
+  //   name: "Lisa Thompson",
+  //   content:
+  //     "Ibrahim optimized our website performance and the results were incredible. Page load times decreased by 60% and our conversion rates doubled.",
+  //   rating: 5,
+  //   avatar: "/professional-woman-marketing-director.jpg",
+  // },
 ];
 
 export function TestimonialsSection() {
@@ -192,17 +175,6 @@ export function TestimonialsSection() {
                     <h3 className="text-xl font-bold text-foreground">
                       {testimonials[currentIndex].name}
                     </h3>
-                    <p className="text-secondary font-medium">
-                      {testimonials[currentIndex].role}
-                    </p>
-                    <p className="text-muted-foreground">
-                      {testimonials[currentIndex].company}
-                    </p>
-                    <div className="mt-2">
-                      <span className="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded-full border border-secondary/30">
-                        {testimonials[currentIndex].projectType}
-                      </span>
-                    </div>
                   </div>
                 </div>
               </CardContent>
