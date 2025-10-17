@@ -107,11 +107,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section
-      id="testimonials"
-      className="py-20 relative overflow-hidden"
-    >
-
+    <section id="testimonials" className="py-20 relative overflow-hidden">
       {/* Animated Grid Pattern
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_24px,rgba(255,0,60,0.3)_25px,rgba(255,0,60,0.3)_26px,transparent_27px,transparent_49px,rgba(8,253,216,0.3)_50px,rgba(8,253,216,0.3)_51px,transparent_52px),linear-gradient(rgba(255,0,60,0.3)_24px,transparent_25px,transparent_26px,rgba(255,0,60,0.3)_27px,rgba(255,0,60,0.3)_49px,transparent_50px,transparent_51px,rgba(8,253,216,0.3)_52px)] bg-[length:75px_75px]" />
@@ -273,7 +269,7 @@ export function TestimonialsSection() {
           </div>
         </div>
 
-        {/* CTA Section */}
+        {/* CTA Section
         <div className="text-center mt-16">
           <p className="text-muted-foreground mb-6">
             Ready to join these satisfied clients?
@@ -289,7 +285,7 @@ export function TestimonialsSection() {
           >
             Start Your Project
           </Button>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

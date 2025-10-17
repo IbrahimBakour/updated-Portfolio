@@ -205,16 +205,16 @@ export function ContactSection() {
                   </h3>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  I'm currently accepting new projects and would love to hear
-                  about your ideas. Let's schedule a call to discuss how we can
-                  bring your vision to life.
+                  I'm currently accepting new positions and would love to hear
+                  about your opportunity. Feel free to reach out to discuss how
+                  I can contribute to your team.
                 </p>
-                <Button
+                {/* <Button
                   className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:scale-105"
                   size="sm"
                 >
                   Schedule a Call
-                </Button>
+                </Button> */}
               </CardContent>
             </Card>
           </div>

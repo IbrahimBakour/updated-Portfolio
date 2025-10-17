@@ -1,14 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Mail, ArrowUp } from "lucide-react";
+import { Download, ArrowUp } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const quickLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Technologies", href: "#technologies" },
-  { name: "Services", href: "#services" },
+  // { name: "Services", href: "#services" },
   { name: "Work", href: "#work" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
@@ -19,8 +19,6 @@ const services = [
   "Backend Development",
   "Full-Stack Solutions",
   "Mobile Development",
-  "Performance Optimization",
-  "Security Auditing",
 ];
 
 export function Footer() {
@@ -60,35 +58,41 @@ export function Footer() {
               </p>
             </div>
             <div className="flex gap-3">
-              <Button
-                variant="outline"
-                size="icon"
-                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
+              <a
+                href="https://github.com/IbrahimBakour"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <FaGithub className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
+                >
+                  <FaGithub className="h-5 w-5" />
+                </Button>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ibrahim-bakour/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <FaLinkedin className="h-4 w-4" />
-              </Button>
-              {/* <Button
-                variant="outline"
-                size="icon"
-                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
-              >
-              </Button>
-              */}
-
-              <Button
-                variant="outline"
-                size="icon"
-                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
-              >
-                <Mail className="h-4 w-4" />
-              </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
+                >
+                  <FaLinkedin className="h-5 w-5" />
+                </Button>
+              </a>
+              <a href="/FullStack_Ibrahim_Bakour.pdf" download>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
+                >
+                  <Download className="h-5 w-5" />
+                </Button>
+              </a>
             </div>
           </div>
 
@@ -149,7 +153,7 @@ export function Footer() {
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                   <span className="text-green-500 text-xs font-medium">
-                    Available for projects
+                    Available for work
                   </span>
                 </div>
               </div>

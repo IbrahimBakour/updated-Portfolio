@@ -30,7 +30,6 @@ export function AboutSection() {
 
   return (
     <section id="about" className="relative py-24 px-4 overflow-hidden">
-
       {/* Scan Line Effect */}
       <div className="absolute inset-0 overflow-hidden">
         <div
@@ -47,9 +46,10 @@ export function AboutSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-white">
             About <span className="text-indigo-400">Me</span>
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 mb-6 rounded-full" />
         </motion.div>
 
         <div className="max-w-4xl mx-auto text-left">
@@ -109,25 +109,6 @@ export function AboutSection() {
             create{" "}
             <span className="text-primary neon-glow">software solutions</span>.
           </motion.p>
-        </div>
-        <div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          onMouseEnter={() => setShowScrollLabel(true)}
-          onMouseLeave={() => setShowScrollLabel(false)}
-        >
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={scrollToTechnology}
-            className="animate-bounce hover:text-primary-foreground hover:bg-primary dark:hover:bg-primary/80 transition-colors duration-300"
-          >
-            <ArrowDown className="h-6 w-6" />
-          </Button>
-          {showScrollLabel && (
-            <div className="absolute -top-8 bg-primary/80 text-primary-foreground text-xs px-2 py-1 rounded-md transition-all duration-300 whitespace-nowrap">
-              My Skills
-            </div>
-          )}
         </div>
       </div>
     </section>

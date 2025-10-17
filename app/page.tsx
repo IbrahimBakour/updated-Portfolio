@@ -28,9 +28,9 @@ export default function Home() {
 
       <SectionSeparator />
 
-      <ServicesSection />
+      {/* <ServicesSection /> */}
 
-      <SectionSeparator />
+      {/* <SectionSeparator /> */}
 
       <WorkSection />
 

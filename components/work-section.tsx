@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, Eye } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github, Eye } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface Project {
-  id: string
-  title: string
-  description: string
-  longDescription: string
-  image: string
-  technologies: string[]
-  category: string
-  liveUrl?: string
-  githubUrl?: string
-  featured: boolean
+  id: string;
+  title: string;
+  description: string;
+  longDescription: string;
+  image: string;
+  technologies: string[];
+  category: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  featured: boolean;
 }
 
 const projects: Project[] = [
@@ -28,7 +28,13 @@ const projects: Project[] = [
     longDescription:
       "A comprehensive e-commerce platform built with Next.js and Node.js, featuring user authentication, product management, shopping cart, payment processing with Stripe, and admin dashboard.",
     image: "/modern-ecommerce-dashboard.png",
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
+    technologies: [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "Stripe",
+      "Tailwind CSS",
+    ],
     category: "Full-Stack",
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
@@ -96,22 +102,23 @@ const projects: Project[] = [
     githubUrl: "https://github.com",
     featured: false,
   },
-]
+];
 
-const categories = ["All", "Full-Stack", "Frontend", "Backend", "Mobile"]
+const categories = ["All", "Full-Stack", "Frontend", "Backend", "Mobile"];
 
 export function WorkSection() {
-  const [activeCategory, setActiveCategory] = useState("All")
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null)
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   const filteredProjects =
-    activeCategory === "All" ? projects : projects.filter((project) => project.category === activeCategory)
+    activeCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
-  const featuredProjects = projects.filter((project) => project.featured)
+  const featuredProjects = projects.filter((project) => project.featured);
 
   return (
     <section id="work" className="py-20 relative overflow-hidden">
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -119,14 +126,17 @@ export function WorkSection() {
             Featured <span className="text-primary neon-glow">Work</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of projects that demonstrate my expertise in modern web development
+            A showcase of projects that demonstrate my expertise in modern web
+            development
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 rounded-full" />
         </div>
 
         {/* Featured Projects */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Featured Projects</h3>
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
+            Featured Projects
+          </h3>
           <div className="grid lg:grid-cols-3 gap-8">
             {featuredProjects.map((project) => (
               <Card
@@ -145,7 +155,10 @@ export function WorkSection() {
                   <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                     <div className="flex gap-2">
                       {project.liveUrl && (
-                        <Button size="sm" className="bg-primary hover:bg-primary/90">
+                        <Button
+                          size="sm"
+                          className="bg-primary hover:bg-primary/90"
+                        >
                           <ExternalLink className="h-4 w-4 mr-1" />
                           Live
                         </Button>
@@ -165,7 +178,10 @@ export function WorkSection() {
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <Badge variant="outline" className="border-secondary text-secondary">
+                    <Badge
+                      variant="outline"
+                      className="border-secondary text-secondary"
+                    >
                       {project.category}
                     </Badge>
                     <Eye className="h-4 w-4 text-muted-foreground" />
@@ -174,7 +190,9 @@ export function WorkSection() {
                     {project.title}
                   </h3>
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    {hoveredProject === project.id ? project.longDescription : project.description}
+                    {hoveredProject === project.id
+                      ? project.longDescription
+                      : project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech) => (
@@ -205,7 +223,7 @@ export function WorkSection() {
                 "transition-all duration-300",
                 activeCategory === category
                   ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                  : "border-border hover:border-primary hover:text-primary hover:bg-primary/10",
+                  : "border-border hover:border-primary hover:text-primary hover:bg-primary/10"
               )}
             >
               {category}
@@ -230,17 +248,28 @@ export function WorkSection() {
               </div>
               <CardContent className="p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <Badge variant="outline" className="border-secondary text-secondary text-xs">
+                  <Badge
+                    variant="outline"
+                    className="border-secondary text-secondary text-xs"
+                  >
                     {project.category}
                   </Badge>
                   <div className="flex gap-1">
                     {project.liveUrl && (
-                      <Button size="sm" variant="ghost" className="h-6 w-6 p-0 hover:text-primary">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="h-6 w-6 p-0 hover:text-primary"
+                      >
                         <ExternalLink className="h-3 w-3" />
                       </Button>
                     )}
                     {project.githubUrl && (
-                      <Button size="sm" variant="ghost" className="h-6 w-6 p-0 hover:text-primary">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="h-6 w-6 p-0 hover:text-primary"
+                      >
                         <Github className="h-3 w-3" />
                       </Button>
                     )}
@@ -249,7 +278,9 @@ export function WorkSection() {
                 <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-3 leading-relaxed">{project.description}</p>
+                <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-1">
                   {project.technologies.slice(0, 2).map((tech) => (
                     <Badge key={tech} variant="secondary" className="text-xs">
@@ -267,7 +298,7 @@ export function WorkSection() {
           ))}
         </div>
 
-        {/* CTA Section */}
+        {/* CTA Section
         <div className="text-center mt-16">
           <p className="text-muted-foreground mb-6">Interested in working together? Let's create something amazing.</p>
           <Button
@@ -277,8 +308,8 @@ export function WorkSection() {
           >
             Start Your Project
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
-  )
+  );
 }
