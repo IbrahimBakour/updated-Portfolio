@@ -1,14 +1,22 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -16,32 +24,33 @@ export function ContactSection() {
     email: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" })
-    setIsSubmitting(false)
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
 
     // Show success message (in a real app, you'd handle this properly)
-    alert("Message sent successfully! I'll get back to you soon.")
-  }
+    alert("Message sent successfully! I'll get back to you soon.");
+  };
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -49,8 +58,8 @@ export function ContactSection() {
             Get In <span className="text-primary neon-glow">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to bring your digital vision to life? Let's discuss your project and create something extraordinary
-            together.
+            Ready to bring your digital vision to life? Let's discuss your
+            project and create something extraordinary together.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 rounded-full" />
         </div>
@@ -118,7 +127,7 @@ export function ContactSection() {
                   disabled={isSubmitting}
                   className={cn(
                     "w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25",
-                    isSubmitting && "opacity-50 cursor-not-allowed",
+                    isSubmitting && "opacity-50 cursor-not-allowed"
                   )}
                 >
                   {isSubmitting ? (
@@ -154,7 +163,9 @@ export function ContactSection() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="text-foreground font-medium">ibrahim@example.com</p>
+                      <p className="text-foreground font-medium">
+                        ibakour37@gmail.com
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -163,7 +174,9 @@ export function ContactSection() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Phone</p>
-                      <p className="text-foreground font-medium">+1 (555) 123-4567</p>
+                      <p className="text-foreground font-medium">
+                        +966 50 532 4115
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -172,40 +185,11 @@ export function ContactSection() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="text-foreground font-medium">San Francisco, CA</p>
+                      <p className="text-foreground font-medium">
+                        Riyadh, Saudi Arabia
+                      </p>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Social Links */}
-            <Card className="bg-card/50 backdrop-blur-md border-2 border-accent/30 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-50" />
-              <CardContent className="p-6 relative z-10">
-                <h3 className="text-xl font-bold text-foreground mb-6">Connect With Me</h3>
-                <div className="flex gap-4">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
-                  >
-                    <Github className="h-5 w-5" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 bg-transparent"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="border-accent/50 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110 bg-transparent"
-                  >
-                    <Twitter className="h-5 w-5" />
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -216,11 +200,14 @@ export function ContactSection() {
               <CardContent className="p-6 relative z-10">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                  <h3 className="text-xl font-bold text-foreground">Available for Projects</h3>
+                  <h3 className="text-xl font-bold text-foreground">
+                    Available for Projects
+                  </h3>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  I'm currently accepting new projects and would love to hear about your ideas. Let's schedule a call to
-                  discuss how we can bring your vision to life.
+                  I'm currently accepting new projects and would love to hear
+                  about your ideas. Let's schedule a call to discuss how we can
+                  bring your vision to life.
                 </p>
                 <Button
                   className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:scale-105"
@@ -234,5 +221,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
