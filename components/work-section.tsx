@@ -110,9 +110,7 @@ export function WorkSection() {
   const featuredProjects = projects.filter((project) => project.featured)
 
   return (
-    <section id="work" className="py-20 bg-background relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
+    <section id="work" className="py-20 relative overflow-hidden">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

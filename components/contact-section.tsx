@@ -40,14 +40,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-background relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-
-      {/* Animated Circuit Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(99,102,241,0.3)_0%,transparent_50%),radial-gradient(circle_at_75%_75%,rgba(236,72,153,0.3)_0%,transparent_50%)]" />
-      </div>
+    <section id="contact" className="py-20 relative overflow-hidden">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

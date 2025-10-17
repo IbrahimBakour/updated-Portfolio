@@ -29,10 +29,8 @@ export function AboutSection() {
   };
 
   return (
-    <section
-      id="about"
-      className="relative bg-gradient-to-b from-[#030303] to-[#0f0f0f] py-24 px-4"
-    >
+    <section id="about" className="relative py-24 px-4 overflow-hidden">
+
       {/* Scan Line Effect */}
       <div className="absolute inset-0 overflow-hidden">
         <div
@@ -43,7 +41,7 @@ export function AboutSection() {
         />
       </div>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

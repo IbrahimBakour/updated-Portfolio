@@ -8,24 +8,37 @@ import { TestimonialsSection } from "@/components/testimonials-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { DevelopmentAlert } from "@/components/development-alert";
+import { SectionSeparator } from "@/components/ui/section-separator";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen">
       <DevelopmentAlert />
       <Navbar />
 
       <HeroSection />
 
+      <SectionSeparator />
+
       <AboutSection />
+
+      <SectionSeparator />
 
       <TechnologyShowcase />
 
+      <SectionSeparator />
+
       <ServicesSection />
+
+      <SectionSeparator />
 
       <WorkSection />
 
+      <SectionSeparator />
+
       <TestimonialsSection />
+
+      <SectionSeparator />
 
       <ContactSection />
 

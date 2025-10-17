@@ -79,9 +79,7 @@ export function ServicesSection() {
   const [activeService, setActiveService] = useState<string | null>(null)
 
   return (
-    <section id="services" className="py-20 bg-muted/5 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+    <section id="services" className="py-20 relative overflow-hidden">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

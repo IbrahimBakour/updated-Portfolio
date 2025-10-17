@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 
 const roles = [
   "Full-Stack Developer",
-  "React Specialist",
+  "Software Engineer",
+  "Web Specialist",
   "Node.js Expert",
-  "UI/UX Enthusiast",
   "Problem Solver",
 ];
 
@@ -60,9 +60,7 @@ export function HeroSection() {
       id="home"
       className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden"
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_50%)]" />
+
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -131,27 +129,41 @@ export function HeroSection() {
 
             {/* Social Links */}
             <div className="flex gap-4 justify-center lg:justify-start">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
+              <a
+                href="https://github.com/IbrahimBakour"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <FaGithub className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
+                >
+                  <FaGithub className="h-5 w-5" />
+                </Button>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ibrahim-bakour/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <FaLinkedin className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
-              >
-                <Download className="h-5 w-5" />
-              </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
+                >
+                  <FaLinkedin className="h-5 w-5" />
+                </Button>
+              </a>
+              <a href="/FullStack_Ibrahim_Bakour.pdf" download>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-primary hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
+                >
+                  <Download className="h-5 w-5" />
+                </Button>
+              </a>
             </div>
           </div>
 

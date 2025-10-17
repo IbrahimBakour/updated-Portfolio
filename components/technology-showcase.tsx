@@ -131,10 +131,8 @@ export function TechnologyShowcase() {
   return (
     <section
       id="technologies"
-      className="py-20 bg-background relative overflow-hidden"
+      className="py-20 relative overflow-hidden"
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/5 to-transparent" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

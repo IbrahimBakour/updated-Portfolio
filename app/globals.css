@@ -32,7 +32,7 @@
 }
 
 .dark {
-  --background: #030303;
+  --background: #0F172A;
   --foreground: #e5e5e5;
   --card: #1a1a1a;
   --card-foreground: #e5e5e5;
@@ -99,7 +99,7 @@
     @apply bg-background text-foreground;
   }
   .dark body {
-    @apply bg-gradient-to-r from-[#030303] to-[#0f0f0f];
+    @apply bg-gradient-to-r from-[#000000] to-[#0F172A];
   }
 }
 

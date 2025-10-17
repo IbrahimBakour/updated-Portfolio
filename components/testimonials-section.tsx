@@ -109,10 +109,8 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="py-20 bg-muted/5 relative overflow-hidden"
+      className="py-20 relative overflow-hidden"
     >
-      {/* Futuristic Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
 
       {/* Animated Grid Pattern
       <div className="absolute inset-0 opacity-10">
