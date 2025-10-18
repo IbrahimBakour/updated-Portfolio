@@ -110,7 +110,7 @@ export function Navbar() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(!isOpen)}
-                className="hover:bg-primary hover:text-primary-foreground"
+                className="hover:bg-primary dark:hover:bg-primary/80 hover:scale-110 transition-all duration-300"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />

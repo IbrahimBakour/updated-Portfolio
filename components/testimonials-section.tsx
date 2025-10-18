@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 interface Testimonial {
   id: string;
   name: string;
+  company: string;
   content: string;
   rating: number;
   avatar: string;
@@ -18,6 +19,7 @@ const testimonials: Testimonial[] = [
   {
     id: "1",
     name: "Arifuzzaman Moin",
+    company: "Linkedin",
     content:
       "I had the pleasure of studying with Ibrahim at university, where I was his senior. He is adaptable, collaborative, and always brings a calm, solutions-focused mindset—any team would be lucky to have him.",
     rating: 5,
@@ -26,6 +28,7 @@ const testimonials: Testimonial[] = [
   {
     id: "2",
     name: "Amr Alsabaeei",
+    company: "Linkedin",
     content:
       "I had the pleasure of studying with Ibrahim during our software engineering program, and he consistently impressed me with his skills as a full stack developer.",
     rating: 5,
@@ -34,28 +37,22 @@ const testimonials: Testimonial[] = [
   {
     id: "3",
     name: "Manea Abdullah",
+    company: "Linkedin",
     content:
       "Ibrahim has always impressed me with his sharp technical skills and thoughtful approach to development. As a full stack developer, he's comfortable working across the entire tech stack and consistently delivers clean, efficient code.",
     rating: 5,
     avatar: "/Manea.png",
   },
 
-  // {
-  //   id: "4",
-  //   name: "David Kim",
-  //   content:
-  //     "The AI chatbot Ibrahim developed revolutionized our customer service. Response times improved by 80% and customer satisfaction reached an all-time high.",
-  //   rating: 5,
-  //   avatar: "/asian-male-ceo-tech-company.jpg",
-  // },
-  // {
-  //   id: "5",
-  //   name: "Lisa Thompson",
-  //   content:
-  //     "Ibrahim optimized our website performance and the results were incredible. Page load times decreased by 60% and our conversion rates doubled.",
-  //   rating: 5,
-  //   avatar: "/professional-woman-marketing-director.jpg",
-  // },
+  {
+    id: "4",
+    name: "Ahmed Elwan",
+    company: "Linkedin",
+    content:
+      "I am happy to recommend Ibrahim Bakour. From the time I have known him, he has consistently shown strong dedication and passion for software development. ",
+    rating: 5,
+    avatar: "/Ahmed.jpeg",
+  },
 ];
 
 export function TestimonialsSection() {
@@ -111,10 +108,10 @@ export function TestimonialsSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Client <span className="text-primary neon-glow">Testimonials</span>
+            Peers <span className="text-primary neon-glow">Testimonials</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            What clients say about working with me in the digital realm
+            What peers say about working with me in the digital realm
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 rounded-full" />
         </div>
@@ -172,6 +169,9 @@ export function TestimonialsSection() {
                     />
                   </div>
                   <div className="text-center">
+                    <p className="text-muted-foreground">
+                      {testimonials[currentIndex].company}
+                    </p>
                     <h3 className="text-xl font-bold text-foreground">
                       {testimonials[currentIndex].name}
                     </h3>

@@ -58,16 +58,14 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden md:pb-24 pb-16"
     >
-
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8 text-center lg:text-left">
             {/* Greeting */}
-            <div className="space-y-2">
+            <div className="space-y-2 pt-16">
               <p className="text-lg text-muted-foreground font-mono">
                 Hello, I'm
               </p>
@@ -203,7 +201,7 @@ export function HeroSection() {
 
         {/* Scroll Indicator */}
         <div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          className="absolute bottom-[35] left-1/2 transform -translate-x-1/2 flex flex-col items-center"
           onMouseEnter={() => setShowScrollLabel(true)}
           onMouseLeave={() => setShowScrollLabel(false)}
         >
