@@ -67,7 +67,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0"></div>
+          <div className="flex-shrink-0">
+            <div className="flex items-center space-x-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
+              </span>
+              <h1 className="text-xl font-logo">Ibrahim</h1>
+            </div>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">

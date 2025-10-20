@@ -61,6 +61,8 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-logo: var(--font-russo-one);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -100,6 +102,10 @@
   }
   .dark body {
     @apply bg-gradient-to-r from-[#000000] to-[#0F172A];
+  }
+
+  .font-logo {
+    font-family: var(--font-logo);
   }
 }
 

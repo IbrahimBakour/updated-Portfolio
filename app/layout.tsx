@@ -1,6 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Russo_One } from "next/font/google"
 import { GeistSans } from "geist/font/sans"
+
+const russoOne = Russo_One({ subsets: ['latin'], weight: '400', variable: '--font-russo-one' })
+
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -21,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${russoOne.variable} antialiased`}>
         <Suspense fallback={null}>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
             {children}
