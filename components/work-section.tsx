@@ -4,7 +4,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { motion } from "framer-motion";
 import { ExternalLink, Github, Eye } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 
 interface Project {
@@ -170,6 +173,8 @@ export function WorkSection() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const filteredProjects =
     activeCategory === "All"
@@ -219,6 +224,10 @@ export function WorkSection() {
             <Card
               key={project.id}
               className="group cursor-pointer transition-all duration-300 hover:scale-105 border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden"
+              onClick={() => {
+                setSelectedProject(project);
+                setIsDialogOpen(true);
+              }}
             >
               <div className="relative overflow-hidden">
                 <img
@@ -298,6 +307,56 @@ export function WorkSection() {
           </div>
         )}
       </div>
+
+      {selectedProject && (
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogContent className="bg-gradient-to-r from-[#000000] to-[#0F172A] border-border/50">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+            >
+              <DialogHeader>
+                <DialogTitle>{selectedProject.title}</DialogTitle>
+              </DialogHeader>
+              <div>
+                <img
+                  src={selectedProject.image || "/placeholder.svg"}
+                  alt={selectedProject.title}
+                  className="w-full h-60 object-cover rounded-md mb-4"
+                />
+                <p className="text-muted-foreground mb-4">{selectedProject.longDescription}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {selectedProject.technologies.map((tech) => (
+                    <Badge key={tech} variant="secondary">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  {selectedProject.liveUrl && (
+                    <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <Button>
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Demo
+                      </Button>
+                    </a>
+                  )}
+                  {selectedProject.githubUrl && (
+                    <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Button variant="secondary">
+                        <Github className="mr-2 h-4 w-4" />
+                        GitHub
+                      </Button>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </DialogContent>
+        </Dialog>
+      )}
     </section>
   );
 }
