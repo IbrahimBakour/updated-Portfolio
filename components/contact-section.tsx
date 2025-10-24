@@ -201,13 +201,15 @@ export function ContactSection() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                   <h3 className="text-xl font-bold text-foreground">
-                    Available for Projects
+                    {/* Available for Projects */}
+                    Availablity for Work
                   </h3>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  I'm currently accepting new positions and would love to hear
-                  about your opportunity. Feel free to reach out to discuss how
-                  I can contribute to your team.
+                  {/* I'm currently */}
+                  I'll be accepting new positions by March/2025, and would love
+                  to hear about your opportunity. Feel free to reach out to
+                  discuss how I can contribute to your team.
                 </p>
                 {/* <Button
                   className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:scale-105"

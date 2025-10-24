@@ -4,7 +4,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Eye } from "lucide-react";
 
@@ -181,7 +186,9 @@ export function WorkSection() {
       ? projects
       : projects.filter((project) => project.category === activeCategory);
 
-  const projectsToShow = showAll ? filteredProjects : filteredProjects.slice(0, 6);
+  const projectsToShow = showAll
+    ? filteredProjects
+    : filteredProjects.slice(0, 6);
 
   const featuredProjects = projects.filter((project) => project.featured);
 
@@ -318,15 +325,19 @@ export function WorkSection() {
               transition={{ duration: 0.3 }}
             >
               <DialogHeader>
-                <DialogTitle>{selectedProject.title}</DialogTitle>
+                <DialogTitle className="pb-4">
+                  {selectedProject.title}
+                </DialogTitle>
               </DialogHeader>
               <div>
                 <img
-                  src={selectedProject.image || "/placeholder.svg"}
+                  src={selectedProject.image}
                   alt={selectedProject.title}
                   className="w-full h-60 object-cover rounded-md mb-4"
                 />
-                <p className="text-muted-foreground mb-4">{selectedProject.longDescription}</p>
+                <p className="text-muted-foreground mb-4">
+                  {selectedProject.longDescription}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {selectedProject.technologies.map((tech) => (
                     <Badge key={tech} variant="secondary">
@@ -336,7 +347,11 @@ export function WorkSection() {
                 </div>
                 <div className="flex gap-4">
                   {selectedProject.liveUrl && (
-                    <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={selectedProject.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Button>
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Live Demo
@@ -344,7 +359,11 @@ export function WorkSection() {
                     </a>
                   )}
                   {selectedProject.githubUrl && (
-                    <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={selectedProject.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Button variant="secondary">
                         <Github className="mr-2 h-4 w-4" />
                         GitHub
