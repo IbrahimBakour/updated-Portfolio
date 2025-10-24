@@ -6,7 +6,7 @@ export function LoadingSpinner() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background">
       <Image
-        src="/favicon.ico"
+        src="/favicon.png"
         alt="Favicon"
         width={64}
         height={64}

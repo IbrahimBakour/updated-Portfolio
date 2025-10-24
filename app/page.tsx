@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { SectionSeparator } from "@/components/ui/section-separator";
-import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { PreLoader } from "@/components/pre-loader";
 
 const Navbar = React.lazy(() =>
   import("@/components/navbar").then((module) => ({ default: module.Navbar }))
@@ -44,7 +44,7 @@ const Footer = React.lazy(() =>
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Suspense fallback={<LoadingSpinner />}>
+      <PreLoader>
         {/* <DevelopmentAlert /> */}
         <Navbar />
 
@@ -75,7 +75,7 @@ export default function Home() {
         <ContactSection />
 
         <Footer />
-      </Suspense>
+      </PreLoader>
     </main>
   );
 }
