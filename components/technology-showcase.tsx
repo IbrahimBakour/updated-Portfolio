@@ -1,51 +1,156 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaSass,
+  FaNodeJs,
+  FaPython,
+  FaGitAlt,
+  FaGithub,
+  FaFigma,
+  FaMousePointer,
+} from "react-icons/fa";
+import {
+  TbBrandNextjs,
+  TbBrandTypescript,
+  TbBrandTailwind,
+} from "react-icons/tb";
+import { IoLogoJavascript } from "react-icons/io";
+import { BiLogoVisualStudio } from "react-icons/bi";
+import {
+  SiExpress,
+  SiDjango,
+  SiFastapi,
+  SiPostgresql,
+  SiMongodb,
+  SiMysql,
+  SiPhp,
+  SiLaravel,
+  SiVercel,
+  SiFirebase,
+  SiPostman,
+  SiWebpack,
+  SiVite,
+} from "react-icons/si";
+import { BsGlobe } from "react-icons/bs";
+import React from "react";
 
 interface Technology {
   name: string;
-  icon: string;
+  icon: React.ReactNode;
   color: string;
   category: string;
 }
 
 const frontendTechnologies: Technology[] = [
-  { name: "React", icon: "⚛️", color: "#61DAFB", category: "Frontend" },
-  { name: "Next.js", icon: "▲", color: "#000000", category: "Frontend" },
-  { name: "Vue.js", icon: "🟢", color: "#4FC08D", category: "Frontend" },
-  { name: "TypeScript", icon: "📘", color: "#3178C6", category: "Frontend" },
-  { name: "JavaScript", icon: "🟨", color: "#F7DF1E", category: "Frontend" },
-  { name: "HTML5", icon: "🌐", color: "#E34F26", category: "Frontend" },
-  { name: "CSS3", icon: "🎨", color: "#1572B6", category: "Frontend" },
-  { name: "Tailwind", icon: "💨", color: "#06B6D4", category: "Frontend" },
-  { name: "Sass", icon: "💅", color: "#CC6699", category: "Frontend" },
+  { name: "React", icon: <FaReact />, color: "#61DAFB", category: "Frontend" },
+  {
+    name: "Next.js",
+    icon: <TbBrandNextjs />,
+    color: "#000000",
+    category: "Frontend",
+  },
+  {
+    name: "JavaScript",
+    icon: <IoLogoJavascript />,
+    color: "#F7DF1E",
+    category: "Frontend",
+  },
+  {
+    name: "TypeScript",
+    icon: <TbBrandTypescript />,
+    color: "#3178C6",
+    category: "Frontend",
+  },
+  { name: "HTML5", icon: <FaHtml5 />, color: "#E34F26", category: "Frontend" },
+  { name: "CSS3", icon: <FaCss3Alt />, color: "#1572B6", category: "Frontend" },
+  {
+    name: "Tailwind",
+    icon: <TbBrandTailwind />,
+    color: "#06B6D4",
+    category: "Frontend",
+  },
+  { name: "Sass", icon: <FaSass />, color: "#CC6699", category: "Frontend" },
 ];
 
 const backendTechnologies: Technology[] = [
-  { name: "Node.js", icon: "🟢", color: "#339933", category: "Backend" },
-  { name: "Python", icon: "🐍", color: "#3776AB", category: "Backend" },
-  { name: "Express", icon: "🚀", color: "#000000", category: "Backend" },
-  { name: "Django", icon: "🎯", color: "#092E20", category: "Backend" },
-  { name: "FastAPI", icon: "⚡", color: "#009688", category: "Backend" },
-  { name: "PostgreSQL", icon: "🐘", color: "#336791", category: "Backend" },
-  { name: "MongoDB", icon: "🍃", color: "#47A248", category: "Backend" },
-  { name: "MySQL", icon: "🐬", color: "#00758F", category: "Backend" },
-  { name: "php", icon: "🐘", color: "#777BB4", category: "Backend" },
-  { name: "laravel", icon: "🌹", color: "#FF2D20", category: "Backend" },
-  { name: "REST API", icon: "🌐", color: "#FF6B35", category: "Backend" },
+  {
+    name: "Node.js",
+    icon: <FaNodeJs />,
+    color: "#339933",
+    category: "Backend",
+  },
+  { name: "Python", icon: <FaPython />, color: "#3776AB", category: "Backend" },
+  {
+    name: "Express",
+    icon: <SiExpress />,
+    color: "#000000",
+    category: "Backend",
+  },
+  { name: "Django", icon: <SiDjango />, color: "#092E20", category: "Backend" },
+  {
+    name: "FastAPI",
+    icon: <SiFastapi />,
+    color: "#009688",
+    category: "Backend",
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql />,
+    color: "#336791",
+    category: "Backend",
+  },
+  {
+    name: "MongoDB",
+    icon: <SiMongodb />,
+    color: "#47A248",
+    category: "Backend",
+  },
+  { name: "MySQL", icon: <SiMysql />, color: "#00758F", category: "Backend" },
+  { name: "php", icon: <SiPhp />, color: "#777BB4", category: "Backend" },
+  {
+    name: "laravel",
+    icon: <SiLaravel />,
+    color: "#FF2D20",
+    category: "Backend",
+  },
+  {
+    name: "REST API",
+    icon: <BsGlobe />,
+    color: "#FF6B35",
+    category: "Backend",
+  },
 ];
 
 const toolsTechnologies: Technology[] = [
-  { name: "Git", icon: "📝", color: "#F05032", category: "Tools" },
-  { name: "GitHub", icon: "🐙", color: "#181717", category: "Tools" },
-  { name: "Vercel", icon: "▲", color: "#000000", category: "Tools" },
-  { name: "Firebase", icon: "🔥", color: "#FFCA28", category: "Tools" },
-  { name: "Figma", icon: "🎨", color: "#F24E1E", category: "Tools" },
-  { name: "VS Code", icon: "💻", color: "#007ACC", category: "Tools" },
-  { name: "Postman", icon: "📮", color: "#FF6C37", category: "Tools" },
-  { name: "Webpack", icon: "📦", color: "#8DD6F9", category: "Tools" },
-  { name: "Cursor", icon: "🖱️", color: "#000000", category: "Tools" },
-  { name: "Vite", icon: "⚡", color: "#646CFF", category: "Tools" },
+  { name: "Git", icon: <FaGitAlt />, color: "#F05032", category: "Tools" },
+  { name: "GitHub", icon: <FaGithub />, color: "#181717", category: "Tools" },
+  { name: "Vercel", icon: <SiVercel />, color: "#000000", category: "Tools" },
+  {
+    name: "Firebase",
+    icon: <SiFirebase />,
+    color: "#FFCA28",
+    category: "Tools",
+  },
+  { name: "Figma", icon: <FaFigma />, color: "#F24E1E", category: "Tools" },
+  {
+    name: "VS Code",
+    icon: <BiLogoVisualStudio />,
+    color: "#007ACC",
+    category: "Tools",
+  },
+  { name: "Postman", icon: <SiPostman />, color: "#FF6C37", category: "Tools" },
+  { name: "Webpack", icon: <SiWebpack />, color: "#8DD6F9", category: "Tools" },
+  {
+    name: "Cursor",
+    icon: <FaMousePointer />,
+    color: "#000000",
+    category: "Tools",
+  },
+  { name: "Vite", icon: <SiVite />, color: "#646CFF", category: "Tools" },
 ];
 
 interface TechSwiperProps {
