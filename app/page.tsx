@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { Suspense, useState, useEffect } from "react";
 import { SectionSeparator } from "@/components/ui/section-separator";
-import { PreLoader } from "@/components/pre-loader";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
 
 const Navbar = React.lazy(() =>
   import("@/components/navbar").then((module) => ({ default: module.Navbar }))
@@ -41,22 +43,81 @@ const Footer = React.lazy(() =>
 );
 // const DevelopmentAlert = React.lazy(() => import('@/components/development-alert').then(module => ({ default: module.DevelopmentAlert })));
 
+// Component to handle progressive loading
+function ProgressiveLoader({ children }: { children: React.ReactNode }) {
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+
+  useEffect(() => {
+    // Preload critical components with progress tracking
+    const preloadComponents = async () => {
+      try {
+        const components = [
+          { name: "Navbar", import: () => import("@/components/navbar") },
+          { name: "Hero Section", import: () => import("@/components/hero-section") },
+          { name: "About Section", import: () => import("@/components/about-section") },
+          { name: "Technology Showcase", import: () => import("@/components/technology-showcase") },
+        ];
+
+        for (let i = 0; i < components.length; i++) {
+          const component = components[i];
+          setLoadingProgress((i / components.length) * 100);
+          
+          try {
+            await component.import();
+            // Simulate network delay for testing
+            await new Promise(resolve => setTimeout(resolve, 200));
+          } catch (error) {
+            console.error(`Error loading ${component.name}:`, error);
+          }
+        }
+
+        setLoadingProgress(100);
+        
+        // Small delay to show completion
+        setTimeout(() => {
+          setIsInitialLoad(false);
+        }, 300);
+      } catch (error) {
+        console.error("Error preloading components:", error);
+        setIsInitialLoad(false);
+      }
+    };
+
+    preloadComponents();
+  }, []);
+
+  if (isInitialLoad) {
+    return <LoadingSpinner progress={loadingProgress} />;
+  }
+
+  return <>{children}</>;
+}
+
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <PreLoader>
+    <ProgressiveLoader>
+      <main className="min-h-screen">
         {/* <DevelopmentAlert /> */}
-        <Navbar />
+        <Suspense fallback={<div className="h-16 bg-background" />}>
+          <Navbar />
+        </Suspense>
 
-        <HeroSection />
+        <Suspense fallback={<div className="min-h-screen bg-background" />}>
+          <HeroSection />
+        </Suspense>
 
         <SectionSeparator />
 
-        <AboutSection />
+        <Suspense fallback={<div className="h-96 bg-background" />}>
+          <AboutSection />
+        </Suspense>
 
         <SectionSeparator />
 
-        <TechnologyShowcase />
+        <Suspense fallback={<div className="h-96 bg-background" />}>
+          <TechnologyShowcase />
+        </Suspense>
 
         <SectionSeparator />
 
@@ -64,18 +125,26 @@ export default function Home() {
 
         {/* <SectionSeparator /> */}
 
-        <WorkSection />
+        <Suspense fallback={<div className="h-96 bg-background" />}>
+          <WorkSection />
+        </Suspense>
 
         <SectionSeparator />
 
-        <TestimonialsSection />
+        <Suspense fallback={<div className="h-96 bg-background" />}>
+          <TestimonialsSection />
+        </Suspense>
 
         <SectionSeparator />
 
-        <ContactSection />
+        <Suspense fallback={<div className="h-96 bg-background" />}>
+          <ContactSection />
+        </Suspense>
 
-        <Footer />
-      </PreLoader>
-    </main>
+        <Suspense fallback={<div className="h-32 bg-background" />}>
+          <Footer />
+        </Suspense>
+      </main>
+    </ProgressiveLoader>
   );
 }
