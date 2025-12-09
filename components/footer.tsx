@@ -84,7 +84,10 @@ export function Footer() {
                   <FaLinkedin className="h-5 w-5" />
                 </Button>
               </a>
-              <a href="/FullStack_Ibrahim_Bakour.pdf" download>
+              <a
+                href="//Ibrahim_Bakour_FullStack_Developer_resume.pdf"
+                download
+              >
                 <Button
                   variant="ghost"
                   size="icon"
