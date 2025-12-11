@@ -159,6 +159,18 @@ const projects: Project[] = [
     featured: false,
   },
   {
+    id: "customer-management-system",
+    title: "Customer Management System",
+    description: "A laravel customer management system",
+    longDescription:
+      "A Laravel-based Customer Management System to desigend using modern UI/UX principles for efficient client data handling and interaction tracking.",
+    image: "/All Filters.png",
+    technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+    githubUrl: "https://github.com/IbrahimBakour/Customer-Management-Website",
+    category: "Full-Stack",
+    featured: false,
+  },
+  {
     id: "telegram-bot",
     title: "Telegram Bot",
     description: "A bot for telegram educational group",
