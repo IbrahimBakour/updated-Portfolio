@@ -35,7 +35,7 @@ const projects: Project[] = [
     description: "Full-stack community platform with user engagement features",
     longDescription:
       "UMPSA Community Platform is my Final Year Project, a MERN-based web app that connects students, clubs, and admins in one hub. Enabling posts, interactions, and reporting, all in a responsive and engaging community space.",
-    image: "/UMPSALogo.png",
+    image: "/umpsa-logo.svg",
     technologies: [
       "React.js",
       "Node.js",
@@ -182,6 +182,19 @@ const projects: Project[] = [
     liveUrl: "https://telegramlingostarsbot.onrender.com/",
     featured: false,
   },
+  {
+    id: "preacher-management-system",
+    title: "Preacher Management System",
+    description: "A flutter app preacher management system",
+    longDescription:
+      "A Flutter application for managing mosque preachers, activities, KPI tracking, payment requests, and comprehensive reporting.",
+    image: "/PreacherMS.png",
+    technologies: ["Flutter", "Dart", "Firebase"],
+    category: "Mobile",
+    githubUrl:
+      "https://github.com/IbrahimBakour/Preacher-Monitoring-Management-System",
+    featured: false,
+  },
 ];
 
 const categories = ["All", "Full-Stack", "Frontend", "Backend", "Mobile"];
@@ -242,17 +255,17 @@ export function WorkSection() {
           {projectsToShow.map((project) => (
             <Card
               key={project.id}
-              className="group cursor-pointer transition-all duration-300 hover:scale-105 border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden"
+              className="group cursor-pointer transition-all duration-300 hover:scale-105 border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden h-full flex flex-col"
               onClick={() => {
                 setSelectedProject(project);
                 setIsDialogOpen(true);
               }}
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden flex-shrink-0 aspect-video bg-base-200 flex items-center justify-center">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-contain transition-transform duration-300 scale-100 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
