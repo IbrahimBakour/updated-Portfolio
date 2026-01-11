@@ -120,63 +120,68 @@ export function CertificatesSection() {
 
   return (
     <section
-      id="certificates"
-      ref={sectionRef}
-      className="py-20 relative overflow-hidden"
-    >
-      {/* Ambient glow */}
-      <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-background to-background" />
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          id="certificates"
+          ref={sectionRef}
+          className="py-20 relative overflow-hidden"
+        >
+          {/* Scanning Line Effect */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div
+              className="absolute w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse opacity-30"
+              style={{
+                top: "20%",
+                animation: "scan 8s linear infinite",
+              }}
+            />
+          </div>
+    
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Certificates &{" "}
-            <span className="text-primary neon-glow">Awards</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            My <span className="text-indigo-400">Certificates</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Credible achievements that validate my skills and commitment to
-            excellence
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            A collection of my professional certificates and awards.
           </p>
-          <div className="w-24 h-1 bg-linear-to-r from-primary via-accent to-secondary mx-auto mt-6 rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto mt-6 rounded-full" />
         </div>
 
         {!hasEnteredView ? (
           <div className="h-80 rounded-2xl bg-muted/30 animate-pulse border border-border/40" />
         ) : (
           <div className="relative">
-            <div className="absolute inset-y-8 left-0 w-16 bg-linear-to-r from-background via-background/70 to-transparent pointer-events-none" />
-            <div className="absolute inset-y-8 right-0 w-16 bg-linear-to-l from-background via-background/70 to-transparent pointer-events-none" />
-
+            <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0f0f0f] to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0f0f0f] to-transparent z-10 pointer-events-none" />
             <Carousel
               opts={{ loop: true, align: "center", skipSnaps: false }}
               setApi={setApi}
               className="select-none"
             >
-              <CarouselContent className="py-4">
+              <CarouselContent>
                 {certificates.map((certificate) => (
                   <CarouselItem
                     key={certificate.id}
                     className="basis-[85%] sm:basis-[70%] lg:basis-[48%] xl:basis-[38%]"
                   >
-                    <Card className="group h-full border-border/50 bg-card/80 backdrop-blur-md overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.25)]">
-                      <div className="relative aspect-4/3 bg-muted/40 flex items-center justify-center overflow-hidden">
+                    <Card className="group h-full bg-[#1a1a1a]/50 border border-transparent hover:border-indigo-500/50 rounded-2xl overflow-hidden transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-500/10">
+                      <div className="relative aspect-video bg-black/30 flex items-center justify-center overflow-hidden">
                         <img
                           src={certificate.image}
                           alt={certificate.title}
                           loading="lazy"
-                          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-background/60 via-transparent to-transparent opacity-60" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
                       </div>
 
                       <CardContent className="p-5 space-y-3">
                         <Badge
                           variant="outline"
-                          className="border-primary/40 text-primary"
+                          className="bg-indigo-500/10 border-indigo-500/30 text-indigo-400 text-xs font-medium rounded-full px-3 py-1"
                         >
                           {certificate.issuer}
                         </Badge>
-                        <h3 className="text-xl font-semibold text-foreground leading-snug">
+                        <h3 className="text-lg font-semibold text-white leading-snug">
                           {certificate.title}
                         </h3>
                       </CardContent>
@@ -188,6 +193,17 @@ export function CertificatesSection() {
           </div>
         )}
       </div>
-    </section>
+    
+          <style jsx>{`
+            @keyframes scan {
+              0% {
+                top: 0%;
+              }
+              100% {
+                top: 100%;
+              }
+            }
+          `}</style>
+        </section>
   );
 }
