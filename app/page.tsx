@@ -28,6 +28,11 @@ const WorkSection = React.lazy(() =>
     default: module.WorkSection,
   }))
 );
+const CertificatesSection = React.lazy(() =>
+  import("@/components/certificates-section").then((module) => ({
+    default: module.CertificatesSection,
+  }))
+);
 const TestimonialsSection = React.lazy(() =>
   import("@/components/testimonials-section").then((module) => ({
     default: module.TestimonialsSection,
@@ -54,26 +59,35 @@ function ProgressiveLoader({ children }: { children: React.ReactNode }) {
       try {
         const components = [
           { name: "Navbar", import: () => import("@/components/navbar") },
-          { name: "Hero Section", import: () => import("@/components/hero-section") },
-          { name: "About Section", import: () => import("@/components/about-section") },
-          { name: "Technology Showcase", import: () => import("@/components/technology-showcase") },
+          {
+            name: "Hero Section",
+            import: () => import("@/components/hero-section"),
+          },
+          {
+            name: "About Section",
+            import: () => import("@/components/about-section"),
+          },
+          {
+            name: "Technology Showcase",
+            import: () => import("@/components/technology-showcase"),
+          },
         ];
 
         for (let i = 0; i < components.length; i++) {
           const component = components[i];
           setLoadingProgress((i / components.length) * 100);
-          
+
           try {
             await component.import();
             // Simulate network delay for testing
-            await new Promise(resolve => setTimeout(resolve, 200));
+            await new Promise((resolve) => setTimeout(resolve, 200));
           } catch (error) {
             console.error(`Error loading ${component.name}:`, error);
           }
         }
 
         setLoadingProgress(100);
-        
+
         // Small delay to show completion
         setTimeout(() => {
           setIsInitialLoad(false);
@@ -133,6 +147,12 @@ export default function Home() {
 
         <Suspense fallback={<div className="h-96 bg-background" />}>
           <TestimonialsSection />
+        </Suspense>
+
+        <SectionSeparator />
+
+        <Suspense fallback={<div className="h-96 bg-background" />}>
+          <CertificatesSection />
         </Suspense>
 
         <SectionSeparator />
