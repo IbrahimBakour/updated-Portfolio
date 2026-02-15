@@ -120,22 +120,22 @@ export function CertificatesSection() {
 
   return (
     <section
-          id="certificates"
-          ref={sectionRef}
-          className="py-20 relative overflow-hidden"
-        >
-          {/* Scanning Line Effect */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div
-              className="absolute w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse opacity-30"
-              style={{
-                top: "20%",
-                animation: "scan 8s linear infinite",
-              }}
-            />
-          </div>
-    
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      id="certificates"
+      ref={sectionRef}
+      className="py-20 relative overflow-hidden"
+    >
+      {/* Scanning Line Effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div
+          className="absolute w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse opacity-30"
+          style={{
+            top: "20%",
+            animation: "scan 8s linear infinite",
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             My <span className="text-indigo-400">Certificates</span>
@@ -193,17 +193,17 @@ export function CertificatesSection() {
           </div>
         )}
       </div>
-    
-          <style jsx>{`
-            @keyframes scan {
-              0% {
-                top: 0%;
-              }
-              100% {
-                top: 100%;
-              }
-            }
-          `}</style>
-        </section>
+
+      <style jsx>{`
+        @keyframes scan {
+          0% {
+            top: 0%;
+          }
+          100% {
+            top: 100%;
+          }
+        }
+      `}</style>
+    </section>
   );
 }
