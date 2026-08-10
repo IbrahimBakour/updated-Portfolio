@@ -81,7 +81,7 @@ export function HeroSection() {
                 <span
                   className={cn(
                     "border-r-2 border-accent",
-                    isTyping ? "animate-pulse" : ""
+                    isTyping ? "animate-pulse" : "",
                   )}
                 >
                   {displayedText}
@@ -153,7 +153,7 @@ export function HeroSection() {
                   <FaLinkedin className="h-5 w-5" />
                 </Button>
               </a>
-              <a href="/Ibrahim_Bakour_FullStack_Developer_resume.pdf" download>
+              <a href="/Ibrahim_Bakour_Software_Engineer_Resume.pdf" download>
                 <Button
                   variant="ghost"
                   size="icon"
@@ -174,8 +174,8 @@ export function HeroSection() {
               {/* Profile Image Container */}
               <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl">
                 <img
-                  src="/SelfImage.png"
-                  alt="Ibrahim - Full-Stack Developer"
+                  src="/SelfImage2.png"
+                  alt="Ibrahim - Software Engineer"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
 

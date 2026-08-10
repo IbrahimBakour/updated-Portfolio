@@ -20,9 +20,93 @@ interface Certificate {
 
 const certificates: Certificate[] = [
   {
+    id: "essentials-n8n",
+    title: "Essentials Your First Workflows Certificate",
+    issuer: "n8n",
+    image: "/Essentials Your First Workflows.jpg",
+  },
+  {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
+  {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
+  {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
+  {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
+  {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
+  {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
+  {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
+  {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
+  {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
+  {
+    id: "integrations-n8n",
+    title: "Integrations APIs & Connected Workflows Certificate",
+    issuer: "n8n",
+    image: "/Integrations APIs & Connected Workflows.jpg",
+  },
+  {
+    id: "integrations-n8n",
+    title: "Integrations APIs & Connected Workflows Certificate",
+    issuer: "n8n",
+    image: "/Integrations APIs & Connected Workflows.jpg",
+  },
+  {
+    id: "integrations-n8n",
+    title: "Integrations APIs & Connected Workflows Certificate",
+    issuer: "n8n",
+    image: "/Integrations APIs & Connected Workflows.jpg",
+  },
+  {
+    id: "integrations-n8n",
+    title: "Integrations APIs & Connected Workflows Certificate",
+    issuer: "n8n",
+    image: "/Integrations APIs & Connected Workflows.jpg",
+  },
+  {
     id: "freecodecamp-backend",
     title: "Backend Certificate",
-    issuer: "Amazon Web Services",
+    issuer: "FreeCodeCamp",
     image: "/FreeCodeCamp Backend Certificate.png",
   },
   {
@@ -98,7 +182,7 @@ export function CertificatesSection() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     const node = sectionRef.current;

@@ -28,7 +28,7 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -127,7 +127,7 @@ export function ContactSection() {
                   disabled={isSubmitting}
                   className={cn(
                     "w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25",
-                    isSubmitting && "opacity-50 cursor-not-allowed"
+                    isSubmitting && "opacity-50 cursor-not-allowed",
                   )}
                 >
                   {isSubmitting ? (
@@ -207,8 +207,8 @@ export function ContactSection() {
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {/* I'm currently */}
-                  I'll be accepting new positions by March/2025, and would love
-                  to hear about your opportunity. Feel free to reach out to
+                  I'll be accepting new positions by Septmeber/2026, and would
+                  love to hear about your opportunity. Feel free to reach out to
                   discuss how I can contribute to your team.
                 </p>
                 {/* <Button
