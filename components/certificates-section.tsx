@@ -26,84 +26,6 @@ const certificates: Certificate[] = [
     image: "/Essentials Your First Workflows.jpg",
   },
   {
-    id: "in-practice-n8n",
-    title: "In Practice AI, Testing & Best Practices Certificate",
-    issuer: "n8n",
-    image: "/In Practice AI, Testing & Best Practices.jpg",
-  },
-  {
-    id: "in-practice-n8n",
-    title: "In Practice AI, Testing & Best Practices Certificate",
-    issuer: "n8n",
-    image: "/In Practice AI, Testing & Best Practices.jpg",
-  },
-  {
-    id: "in-practice-n8n",
-    title: "In Practice AI, Testing & Best Practices Certificate",
-    issuer: "n8n",
-    image: "/In Practice AI, Testing & Best Practices.jpg",
-  },
-  {
-    id: "in-practice-n8n",
-    title: "In Practice AI, Testing & Best Practices Certificate",
-    issuer: "n8n",
-    image: "/In Practice AI, Testing & Best Practices.jpg",
-  },
-  {
-    id: "in-practice-n8n",
-    title: "In Practice AI, Testing & Best Practices Certificate",
-    issuer: "n8n",
-    image: "/In Practice AI, Testing & Best Practices.jpg",
-  },
-  {
-    id: "in-practice-n8n",
-    title: "In Practice AI, Testing & Best Practices Certificate",
-    issuer: "n8n",
-    image: "/In Practice AI, Testing & Best Practices.jpg",
-  },
-  {
-    id: "in-practice-n8n",
-    title: "In Practice AI, Testing & Best Practices Certificate",
-    issuer: "n8n",
-    image: "/In Practice AI, Testing & Best Practices.jpg",
-  },
-  {
-    id: "in-practice-n8n",
-    title: "In Practice AI, Testing & Best Practices Certificate",
-    issuer: "n8n",
-    image: "/In Practice AI, Testing & Best Practices.jpg",
-  },
-  {
-    id: "in-practice-n8n",
-    title: "In Practice AI, Testing & Best Practices Certificate",
-    issuer: "n8n",
-    image: "/In Practice AI, Testing & Best Practices.jpg",
-  },
-  {
-    id: "integrations-n8n",
-    title: "Integrations APIs & Connected Workflows Certificate",
-    issuer: "n8n",
-    image: "/Integrations APIs & Connected Workflows.jpg",
-  },
-  {
-    id: "integrations-n8n",
-    title: "Integrations APIs & Connected Workflows Certificate",
-    issuer: "n8n",
-    image: "/Integrations APIs & Connected Workflows.jpg",
-  },
-  {
-    id: "integrations-n8n",
-    title: "Integrations APIs & Connected Workflows Certificate",
-    issuer: "n8n",
-    image: "/Integrations APIs & Connected Workflows.jpg",
-  },
-  {
-    id: "integrations-n8n",
-    title: "Integrations APIs & Connected Workflows Certificate",
-    issuer: "n8n",
-    image: "/Integrations APIs & Connected Workflows.jpg",
-  },
-  {
     id: "freecodecamp-backend",
     title: "Backend Certificate",
     issuer: "FreeCodeCamp",
@@ -114,6 +36,12 @@ const certificates: Certificate[] = [
     title: "Backend Manara Certificate",
     issuer: "Manara",
     image: "/Backend Manara Certificate.png",
+  },
+  {
+    id: "integrations-n8n",
+    title: "Integrations APIs & Connected Workflows Certificate",
+    issuer: "n8n",
+    image: "/Integrations APIs & Connected Workflows.jpg",
   },
   {
     id: "emotional-intelligence",
@@ -139,7 +67,12 @@ const certificates: Certificate[] = [
     issuer: "SimpliLearn",
     image: "/Introduction to Flutter Course Certificate.png",
   },
-
+    {
+    id: "in-practice-n8n",
+    title: "In Practice AI, Testing & Best Practices Certificate",
+    issuer: "n8n",
+    image: "/In Practice AI, Testing & Best Practices.jpg",
+  },
   {
     id: "ones-self",
     title: "Emotional Intelligence and One's Self",
