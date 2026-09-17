@@ -144,7 +144,7 @@ const projects: Project[] = [
     image: "/LoginPage.jpeg",
     technologies: ["React.js", "Express", "MongoDB", "Mailtrap"],
     category: "Backend",
-    liveUrl: "https://mern-auth-yemw.onrender.com/",
+    // liveUrl: "https://mern-auth-yemw.onrender.com/",
     githubUrl: "https://github.com/IbrahimBakour/MERN-Auth",
     featured: false,
   },
