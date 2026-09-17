@@ -59,19 +59,15 @@ export function AboutSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-lg md:text-xl text-gray-300 leading-relaxed"
           >
-            I am a <span className="text-primary neon-glow">final-year</span>{" "}
-            Computer Science{" "}
-            <span className="text-primary neon-glow">student</span> specializing
-            in{" "}
-            <span className="text-primary neon-glow">Software Engineering</span>
-            . During my studies, I have learned the{" "}
-            <span className="text-primary neon-glow">theoretical</span> aspects
-            of computer science and applied them through{" "}
-            <span className="text-primary neon-glow">practical projects</span>.
-            In my free time, I focus on improving my programming skills and
-            working on{" "}
-            <span className="text-primary neon-glow">personal projects</span> to
-            prepare myself for the job market.
+            I am a <span className="text-primary neon-glow">Computer Science graduate</span>{" "}
+            specializing in{" "}
+            <span className="text-primary neon-glow">Software Engineering</span>. Throughout
+            my studies and practical experience, I’ve bridged{" "}
+            <span className="text-primary neon-glow">theoretical computer science</span>{" "}
+            with hands-on{" "}
+            <span className="text-primary neon-glow">systems architecture</span>,{" "}
+            <span className="text-primary neon-glow">backend integrations</span>, and{" "}
+            <span className="text-primary neon-glow">workflow automation</span>.
           </motion.p>
           <motion.ul
             initial={{ opacity: 0 }}
@@ -80,35 +76,24 @@ export function AboutSection() {
             className="list-disc list-inside text-lg md:text-xl text-gray-300 leading-relaxed space-y-2 my-6"
           >
             <li>
-              Gained practical experience by combining what I learned in class
-              with{" "}
-              <span className="text-primary neon-glow">hands-on projects</span>.
+              Applied my academic foundation directly to real-world production
+              environments, designing scalable{" "}
+              <span className="text-primary neon-glow">API integrations</span> and{" "}
+              <span className="text-primary neon-glow">automated backend systems</span>.
             </li>
             <li>
-              Spent time building small{" "}
-              <span className="text-primary neon-glow">web applications</span>{" "}
-              and exploring modern technologies to improve my understanding of
-              software development.
+              Built end-to-end web applications and intelligent{" "}
+              <span className="text-primary neon-glow">automation pipelines</span>, working
+              extensively with modern APIs, databases, and workflow orchestration engines.
             </li>
             <li>
-              Developed a good foundation in{" "}
-              <span className="text-primary neon-glow">front-end</span> and{" "}
-              <span className="text-primary neon-glow">back-end</span>{" "}
-              development, databases, and APIs, which I applied in my projects.
+              Developed strong expertise in{" "}
+              <span className="text-primary neon-glow">full-stack concepts</span>,{" "}
+              <span className="text-primary neon-glow">data management</span>, and{" "}
+              <span className="text-primary neon-glow">system resilience</span> to engineer
+              reliable, production-ready software solutions.
             </li>
           </motion.ul>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            className="text-lg md:text-xl text-gray-300 leading-relaxed"
-          >
-            I’m always excited about{" "}
-            <span className="text-primary neon-glow">opportunities</span> to
-            grow, contribute to a team, and apply my problem-solving skills to
-            create{" "}
-            <span className="text-primary neon-glow">software solutions</span>.
-          </motion.p>
         </div>
       </div>
     </section>
